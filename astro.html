@@ -1,60 +1,50 @@
 <!DOCTYPE HTML>
 <html>
   <head>
-    <title>Astro - Portfolio Tiago Pinto</title>
+    <title>Astro – Portfolio Tiago Pinto</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Astrophotographie – Voie lactée, Lune, planètes. Portfolio Tiago Pinto." />
+    <meta name="description" content="Astrophotographie : Voie lactée, Lune, planètes. Portfolio Tiago Pinto." />
     <link rel="stylesheet" href="assets/css/main.css" />
   </head>
   <body>
-    <!-- Menu -->
-    <nav style="padding: 1em; text-align: center;">
-      <a href="index.html">Accueil</a> |
-      <a href="concerts.html">Concerts</a> |
-      <a href="portraits.html">Portraits</a> |
-      <a href="astro.html">Astro</a>
-    </nav>
-
-    <!-- Galerie Astro -->
+    <!-- Main -->
     <div id="main">
-      <!-- Utilise provisoirement les images du template (01..06).
-           Remplacer ensuite par tes fichiers: images/thumbs/astro-xxx.jpg & images/fulls/astro-xxx.jpg -->
-      <article class="thumb">
-        <a href="images/fulls/01.jpg" class="image"><img src="images/thumbs/01.jpg" alt="Voie lactée – Alsace" /></a>
-        <h2>Voie lactée</h2>
-        <p>Panorama de la Voie lactée</p>
-      </article>
 
-      <article class="thumb">
-        <a href="images/fulls/02.jpg" class="image"><img src="images/thumbs/02.jpg" alt="La Lune – quartier" /></a>
-        <h2>Lune en quartier</h2>
-        <p>Détails des mers lunaires</p>
-      </article>
+      <!-- Header -->
+      <header id="header">
+        <h1>Astro</h1>
+        <p>Astrophotographie – Tiago Pinto</p>
+        <ul class="icons">
+          <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+          <li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+          <li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+          <li><a href="#" class="icon fa-envelope"><span class="label">Email</span></a></li>
+        </ul>
 
-      <article class="thumb">
-        <a href="images/fulls/03.jpg" class="image"><img src="images/thumbs/03.jpg" alt="Jupiter et ses satellites" /></a>
-        <h2>Jupiter</h2>
-        <p>Jupiter et 4 satellites galiléens</p>
-      </article>
+        <!-- Menu -->
+        <nav style="margin-top: 1rem; text-align: left;">
+          <a href="index.html">Accueil</a><br>
+          <a href="concerts.html">Concerts</a><br>
+          <a href="astro.html">Astro</a>
+        </nav>
+      </header>
 
-      <article class="thumb">
-        <a href="images/fulls/04.jpg" class="image"><img src="images/thumbs/04.jpg" alt="Nébuleuse" /></a>
-        <h2>Nébuleuse</h2>
-        <p>Pilotes de traitement HOO</p>
-      </article>
+      <!-- Galerie Astro -->
+      <section id="thumbnails">
+        <article class="thumb">
+          <a href="images/fulls/astro1.jpg" class="image"><img src="images/thumbs/astro1.jpg" alt="Voie lactée" /></a>
+          <h2>Voie lactée en Alsace</h2>
+          <p>Photo prise en été</p>
+        </article>
 
-      <article class="thumb">
-        <a href="images/fulls/05.jpg" class="image"><img src="images/thumbs/05.jpg" alt="Amas d'étoiles" /></a>
-        <h2>Amas ouvert</h2>
-        <p>Observation grand champ</p>
-      </article>
+        <article class="thumb">
+          <a href="images/fulls/astro2.jpg" class="image"><img src="images/thumbs/astro2.jpg" alt="Lune" /></a>
+          <h2>Détail de la Lune</h2>
+          <p>Observation au télescope</p>
+        </article>
+      </section>
 
-      <article class="thumb">
-        <a href="images/fulls/06.jpg" class="image"><img src="images/thumbs/06.jpg" alt="Voie lactée au-dessus d'un paysage" /></a>
-        <h2>Paysage nocturne</h2>
-        <p>Arc galactique et premier plan</p>
-      </article>
     </div>
   </body>
 </html>
