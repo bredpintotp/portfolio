@@ -3,82 +3,113 @@
 <head>
   <title>Astro – Portfolio Tiago Pinto</title>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="Astrophotographie – Voie lactée, Lune, planètes. Portfolio Tiago Pinto." />
-  <link rel="stylesheet" href="assets/css/main.css" />
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #000;
+      color: #fff;
+    }
+
+    nav {
+      padding: 1em;
+      text-align: center;
+    }
+
+    nav a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: white;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    header {
+      text-align: center;
+      padding: 2em 0;
+    }
+
+    /* Grille des miniatures */
+    #thumbnails {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 15px;
+      padding: 20px;
+    }
+
+    #thumbnails .thumb img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 6px;
+      display: block;
+    }
+
+    #thumbnails .thumb h2,
+    #thumbnails .thumb p {
+      display: none; /* on cache le texte sous les images */
+    }
+  </style>
 </head>
 <body>
-
   <!-- Menu -->
-  <nav style="padding: 1em; text-align: center;">
+  <nav>
     <a href="index.html">Accueil</a> |
     <a href="concerts.html">Concerts</a> |
     <a href="astro.html">Astro</a>
   </nav>
 
-  <!-- Main -->
-  <div id="main">
+  <!-- Header -->
+  <header>
+    <h1>Astro</h1>
+    <p>Astrophotographie – Tiago Pinto</p>
+  </header>
 
-    <!-- Header -->
-    <header id="header">
-      <h1>Astro</h1>
-      <p>Astrophotographie – Tiago Pinto</p>
-      <ul class="icons">
-        <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-        <li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-        <li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-        <li><a href="#" class="icon fa-envelope"><span class="label">Email</span></a></li>
-      </ul>
-    </header>
-
-    <!-- Galerie Astro -->
-    <section id="thumbnails"></section>
-
+  <!-- Galerie Astro -->
+  <div id="thumbnails">
+    <article class="thumb">
+      <a href="fulls/1.jpg"><img src="thumbs/1.jpg" alt="Photo 1"></a>
+    </article>
+    <article class="thumb">
+      <a href="fulls/2.jpg"><img src="thumbs/2.jpg" alt="Photo 2"></a>
+    </article>
+    <article class="thumb">
+      <a href="fulls/3.jpg"><img src="thumbs/3.jpg" alt="Photo 3"></a>
+    </article>
+    <article class="thumb">
+      <a href="fulls/4.jpg"><img src="thumbs/4.jpg" alt="Photo 4"></a>
+    </article>
+    <article class="thumb">
+      <a href="fulls/5.jpg"><img src="thumbs/5.jpg" alt="Photo 5"></a>
+    </article>
+    <article class="thumb">
+      <a href="fulls/6.jpg"><img src="thumbs/6.jpg" alt="Photo 6"></a>
+    </article>
+    <article class="thumb">
+      <a href="fulls/7.jpg"><img src="thumbs/7.jpg" alt="Photo 7"></a>
+    </article>
+    <article class="thumb">
+      <a href="fulls/8.jpg"><img src="thumbs/8.jpg" alt="Photo 8"></a>
+    </article>
+    <article class="thumb">
+      <a href="fulls/9.jpg"><img src="thumbs/9.jpg" alt="Photo 9"></a>
+    </article>
+    <article class="thumb">
+      <a href="fulls/10.jpg"><img src="thumbs/10.jpg" alt="Photo 10"></a>
+    </article>
+    <article class="thumb">
+      <a href="fulls/11.jpg"><img src="thumbs/11.jpg" alt="Photo 11"></a>
+    </article>
+    <article class="thumb">
+      <a href="fulls/12.jpg"><img src="thumbs/12.jpg" alt="Photo 12"></a>
+    </article>
+    <!-- continue jusqu’au nombre total de photos -->
   </div>
-
-  <!-- Script pour générer la galerie automatiquement -->
-  <script>
-  /*
-    Génère automatiquement la galerie pour
-    fulls/photo-1.jpg … fulls/photo-N.jpg
-    et thumbs/photo-1.jpg … thumbs/photo-N.jpg
-    -> Les vignettes manquantes sont ignorées (onerror).
-  */
-  (function () {
-    const container = document.querySelector('#thumbnails');
-    const MAX = 60; // Mets ici un nombre au-dessus de ton total de photos
-
-    for (let i = 1; i <= MAX; i++) {
-      const base = `photo-${i}.jpg`;
-      const full = `fulls/${base}`;
-      const thumb = `thumbs/${base}`;
-
-      // article
-      const article = document.createElement('article');
-      article.className = 'thumb';
-
-      // lien + image
-      const a = document.createElement('a');
-      a.href = full;
-      a.className = 'image';
-
-      const img = document.createElement('img');
-      img.src = thumb;
-      img.alt = `Photo ${i}`;
-      // si la miniature n'existe pas, on retire l'article
-      img.onerror = () => article.remove();
-
-      a.appendChild(img);
-
-      // titre
-      const h2 = document.createElement('h2');
-      h2.textContent = `Photo ${i}`;
-
-      article.append(a, h2);
-      container.appendChild(article);
-    }
-  })();
-  </script>
-
 </body>
 </html>
